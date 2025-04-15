@@ -29,6 +29,6 @@ public class Caesar {
         
         System.out.printf("Input Text: %s\n", content);
         System.out.printf("Encoded Text: %s\n", encodedContent);
-        System.out.printf("Decoded Text: %s\n", Decoder.Caesar(decodedContent, counts));
+        System.out.printf("Decoded Text: %s\n", decodedContent);
     }
 }
