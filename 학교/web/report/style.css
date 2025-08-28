@@ -1,0 +1,174 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #dfdfdf;
+}
+
+#programBar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 100px;
+    vertical-align: middle;
+    background-color:rgb(255, 255, 255);
+    z-index: 1000;
+}
+#programTitle {
+    margin-left: 2%;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app {
+    height: 550px;
+    margin-left: 2.5%;
+    margin-top: 130px;
+    margin-bottom: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: auto;
+    color: rgb(71, 71, 71);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#form {
+    display: flex;
+    gap: 10px;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 2.5%;
+    padding-left: 1%;
+    padding-top: 2%;
+    box-sizing: border-box;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+}
+
+.input {
+    width: 200px;
+    height: 40px;
+    background-color: rgb(255, 255, 255);
+    border-top-color: rgb(115, 115, 115);
+    border-top: 1px;
+    border-left: 0;
+    border-right: 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    outline: 0;
+    transition: background-color 0.25s;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+textarea::placeholder {
+    position: absolute;
+    top: 25%;
+}
+
+button {
+    width: 100px;
+    height: 42px;
+    border: 0;
+    border-radius: 5px;
+    background-color: rgb(48, 155, 255);
+    color: white;
+    outline: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+button:focus {
+    animation: clickBtn 0.25s;
+}
+
+.input:focus {
+    background-color: rgb(240, 240, 240);;
+}
+
+#post {
+    background-color: white;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+#post:hover {
+    background-color: rgba(240, 240, 240, 0.8);
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+
+
+
+
+
+#popup {
+    display: block;
+    position: fixed;
+    top: 15%;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: 95%;
+    margin: 0;
+    border-radius: 8px;
+    overflow-y: auto;
+    overflow-x: auto;
+    color: rgb(71, 71, 71);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 1);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 150%;
+    z-index: 1010;
+}
+
+#popupTitle {
+    margin-left: 2%;
+    margin-top: 2%;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#popupAuthor {
+    margin-left: 2%;
+    margin-top: 1%;
+    color: rgb(0, 0, 0);
+    font-size: 80%;
+}   
+
+#popupContent {
+    margin-left: 2.5%;
+    margin-top: 2%;
+}
+
+@keyframes clickBtn {
+    from {
+        background-color: rgb(48, 155, 255);
+        width: 100px;
+        height: 42px;
+    }
+    to {
+        background-color: rgba(98, 46, 177, 0.8);
+        width: 95px;
+        height: 38px;
+    }
+    from {
+        background-color: rgba(98, 46, 177, 0.8);
+        width: 95px;
+        height: 38px;
+    }
+    to {
+        background-color: rgb(48, 155, 255);
+        width: 100px;
+        height: 42px;
+    }
+}

@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue 3 연습</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
 
+<body>
+  <div id="app">
+    <ol>
+        <li v-for = "item in items">
+            {{ item.text }}
+        </li>
+    </ol>
+    <span>
+        <input v-model = "itemName" placeholder = "할 일을 입력하세요.">
+        <button @click = "addItem">추가</button>
+    </span>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+      setup() {
+        const message = ref('Hello Vue 3!')
+        const items = ref([])
+        const itemName = ref("");
+
+        const addItem = () => {
+          if(!itemName.value || itemName.value.trim().length === 0) {
+            return alert("할 일이 입력되지 않았습니다.");
+           }
+          
+          items.value.push({text: itemName.value});
+          itemName.value = '';
+        }
+        return { message, items, itemName, addItem }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

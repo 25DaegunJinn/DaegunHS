@@ -1,0 +1,68 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Community For Test</title>
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </head>
+    <body>
+        <link rel = "stylesheet" href = "style.css">
+        <header>
+            <div id="programBar">
+                <div id = "programTitle"><h1>Community For Test</h1></div>
+            </div>
+        </header>
+        <nav>
+            <div id = "app">
+                <div id = "form">
+                    <input v-model = "author" placeholder = "작성자" id = "author" class = "input" >
+                    <input v-model = "title" placeholder = "제목" id = "title" class = "input" >
+                    <textarea rows = "4" cols = "50" v-model = "content" placeholder = "게시글 내용" id = "content" class = "input"></textarea>
+                    <button @click = "addPost" id = "addPost">작성</button>
+                </div>
+                <div id = "list">
+                    <ul>
+                        <li v-for = "post in posts" :key = "post.id" id = "post">
+                            <div @click = "popupPost(post.title, post.author, post.content, post.comments)">
+                                <strong><h2>{{ post.title }}</h2></strong>
+                                <br>작성자: {{ post.author }} ({{ post.created_at }})
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id = "popup" v-if = "isPopupVisible" @click = "closePopup">
+                    <div id="popupTitle">
+                        <h1 id="PopupTitleText">{{ popupTitle }}</h1>
+                    </div>
+                    <div id="popupAuthor">
+                        <h3 id="PopupAuthorText">작성자: {{ popupAuthor }}</h3>
+                    </div>
+                    <hr>
+                    <br>
+                    <div id="popupContent">
+                        <div v-html = "popupContent"></div>
+                    </div>
+                    <div id="comments">
+                        <ul>
+                            <li v-for = "comment in comments" :key = "comment.id" id = "comment">
+                                <div>
+                                    <strong>{{ comment.author }}</strong>
+                                    <br><pre><div v-html="comment.content"></div></pre>
+                                    <br>({{ comment.created_at }})
+                                    <br>
+                                    <br>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <script src = "app.js"></script>
+    </body>
+    </html\
